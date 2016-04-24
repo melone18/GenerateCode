@@ -1,0 +1,21 @@
+﻿@("using System;")
+@("using System.Collections.Generic;")
+@("using System.Linq;")
+@("using System.Text;")
+@("using System.Threading.Tasks; ")
+
+
+
+@("namespace ")@Model.NameSpace
+@("{")
+    @("public class ")@Model.Tablename@("PO")
+    @("{")
+            @foreach (var item in Model.Columns)
+            {
+                @("/// <summary>\r\n")
+                @("/// ")@item.FileDesc@("\r\n")
+                @("/// </summary>\r\n")
+                @("public ")@item.FileType@(" ")@item.FileName@("{get;set;}\r\n")
+            }
+    @("}")
+@("}")

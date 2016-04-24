@@ -1,0 +1,27 @@
+﻿@("using System;")
+@("using System.Collections.Generic;")
+@("using System.Linq;")
+@("using System.Text;")
+@("using System.Threading.Tasks; ")
+
+
+
+@("namespace ")@Model.NameSpace
+@("{")
+    @("public interface I")@Model.Tablename@("Reposition")
+    @("{")
+            @("\t")@("IList<")@Model.Tablename@("PO")@(">")@("GetAll();")@("\r\n") 
+            @("\t")@Model.Tablename@("PO")@(" ")@("GetEntityByKey(int id);")@("\r\n")
+            @if (Model.Type == "U")
+            {
+                @("\t")@("bool ")@("Insert(")@Model.Tablename@("PO")@(");")@("\r\n")
+                @("\t")@("bool ")@("Update(")@Model.Tablename@("PO")@(");")@("\r\n")
+                @("\t")@("bool ")@("Delete(")@Model.Tablename@("PO")@(");")@("\r\n")
+                @("\t")@("bool ")@("Delete(int id);")@("\r\n")
+                @("\t")@("bool ")@("BulkInsert(")@("IList<")@Model.Tablename@("PO")@(">")@(");")@("\r\n")
+                @("\t")@("bool ")@("BulkUpdate(")@("IList<")@Model.Tablename@("PO")@(">")@(");")@("\r\n")
+                @("\t")@("bool ")@("BulkDelete(")@("IList<")@Model.Tablename@("PO")@(">")@(");")@("\r\n")
+                @("\t")@("bool ")@("BulkDelete(IList<int> ids);")@("\r\n")
+            }
+    @("}")
+@("}")
